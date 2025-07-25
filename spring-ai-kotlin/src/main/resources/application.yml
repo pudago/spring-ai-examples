@@ -1,0 +1,7 @@
+spring:
+    application:
+        name: demo
+    ai:
+        zhipuai:
+            base_url: https://open.bigmodel.cn/api/paas
+            api-key: 

@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: spring-ai-evaluators
+    ai:
+        zhipuai:
+            base_url: https://open.bigmodel.cn/api/paas
+            api_key: 
+        vectorstore:
+            qdrant:
+                host: 172.16.1.87
+                port: 6334 # gRPC port other than HTTP port
+                collection-name: burgerbattle
+                use-tls: false
+                initialize-schema: true
