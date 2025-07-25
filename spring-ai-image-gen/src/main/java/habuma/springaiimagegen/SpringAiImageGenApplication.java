@@ -1,8 +1,8 @@
 package habuma.springaiimagegen;
 
 import org.springframework.ai.image.ImageModel;
-import org.springframework.ai.openai.OpenAiImageModel;
-import org.springframework.ai.openai.api.OpenAiImageApi;
+import org.springframework.ai.zhipuai.ZhiPuAiImageModel;
+import org.springframework.ai.zhipuai.api.ZhiPuAiImageApi;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,9 +16,8 @@ public class SpringAiImageGenApplication {
     }
 
     @Bean
-    ImageModel imageModel(@Value("${spring.ai.openai.api-key}") String apiKey) {
-        return new OpenAiImageModel(
-            OpenAiImageApi.builder().apiKey(apiKey).build());
+    ImageModel imageModel(@Value("${spring.ai.zhipuai.api-key}") String apiKey) {
+        return new ZhiPuAiImageModel(new ZhiPuAiImageApi(apiKey));
     }
 
 }

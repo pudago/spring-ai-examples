@@ -1,8 +1,6 @@
-Summarize the content of the given text in the DOCUMENT entry.
-Summarize each section of the document separately as well as
-the entire document. The summary for each section should be no
-longer than 2 paragraphs. The summary for the entire document
-should be no longer than 1 paragraph.
+总结 DOCUMENT 下的内容:
+分别总结每个段落的内容, 每短总结不超过一段文字。
+最后做一个全文总结，也不超过一段文字。
 
 DOCUMENT:
 {document}

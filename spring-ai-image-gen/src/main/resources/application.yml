@@ -1,0 +1,11 @@
+spring:
+  ai:
+    model:
+      image: zhipuai
+    zhipuai:
+      base_url: https://open.bigmodel.cn/api/paas
+      api_key: 
+      image: # Image generation model
+        options:
+          model: cogview-3-flash
+          user: fosong

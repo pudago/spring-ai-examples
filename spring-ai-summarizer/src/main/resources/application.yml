@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: spring-ai-summarizer
+  ai:
+    zhipuai:
+      base_url: https://open.bigmodel.cn/api/paas
+      api_key: 

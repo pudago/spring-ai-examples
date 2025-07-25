@@ -1,5 +1,6 @@
 # Spring AI Examples
 
+
 This repository is where I'll commit various examples of using Spring AI.
 
 You can clone this project in its entirety and work with it like that. *Or*
@@ -54,3 +55,8 @@ now available in Manning's Early Access Program (MEAP). It covers all aspects of
 working with Spring AI with a fun example that runs throughout most of the book. 
 
 ![Spring AI in Action](https://www.habuma.com/img/SAIiA_small.png "Spring AI in Action")
+
+## fork后的改动
+- 由于网络的原因，将所有样例中的OpenAI改为ZhipuAi
+- application.properties重命名为application.yml
+- Spring Boot和JDK版本也有调整

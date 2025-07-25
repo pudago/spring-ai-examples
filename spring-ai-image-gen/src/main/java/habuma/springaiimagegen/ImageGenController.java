@@ -21,7 +21,7 @@ public class ImageGenController {
     @PostMapping("/imagegen")
     public String imageGen(@RequestBody ImageGenRequest request) {
         ImageOptions options = ImageOptionsBuilder.builder()
-                .model("dall-e-3")
+                // .model("dall-e-3")
                 .height(1024)
                 .width(1024)
                 .build();
@@ -29,7 +29,6 @@ public class ImageGenController {
         ImagePrompt imagePrompt = new ImagePrompt(request.prompt(), options);
         ImageResponse response = imageModel.call(imagePrompt);
         String imageUrl = response.getResult().getOutput().getUrl();
-
         return "redirect:" + imageUrl;
     }
 

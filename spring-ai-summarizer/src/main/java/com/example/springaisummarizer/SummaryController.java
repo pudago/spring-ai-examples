@@ -34,7 +34,7 @@ public class SummaryController {
         .collect(Collectors.joining("\n\n"));
 
     return chatClient.prompt()
-        .user("Summarize the text")
+        .user("总结文字")
         .system(systemSpec -> systemSpec
             .text(summarizeTemplate)
             .param("document", documentText))
