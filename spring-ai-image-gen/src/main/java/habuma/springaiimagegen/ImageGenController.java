@@ -21,7 +21,8 @@ public class ImageGenController {
     @PostMapping("/imagegen")
     public String imageGen(@RequestBody ImageGenRequest request) {
         ImageOptions options = ImageOptionsBuilder.builder()
-                // .model("dall-e-3")
+                // .model("cogview-4-250304")
+                //.quality("hd") // https://open.bigmodel.cn/dev/api/image-model/cogview
                 .height(1024)
                 .width(1024)
                 .build();

@@ -28,6 +28,7 @@ curl -L -X POST -H "Content-type: application/json" \
 - 原因: Controller中POST请求结束后重定向到阿里云的OSS的图片地址，这是一个GET请求
 - 解决：curl不指定-X 选项，使用-L，让它自己跟随请求类型自动选择
 ```bash
+# https://aigc-files.bigmodel.cn/api/cogview/20250725164037c054c14628494a03_0.png
 curl -L -H "Content-type: application/json" \
     http://localhost:8080/imagegen 
     -d '{"prompt": "画一幅孙悟空牵手哆啦A梦"}'
