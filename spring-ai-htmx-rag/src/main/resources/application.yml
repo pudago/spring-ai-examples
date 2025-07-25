@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: dqms-assistant
+  ai:
+    zhipuai:
+      base_url: https://open.bigmodel.cn/api/paas
+      api_key:
+      embedding:
+        options:
+          model: embedding-2
+          dimensions: 1024
+    vectorstore:
+      #pgvector:
+      #  index-type: HNSW
+      #  distance-type: COSINE_DISTANCE
+      #  max-document-batch-size: 10000
+      chroma:
+        initialize-schema: false
+        collection-name: nfl
+        client:
+          host: http://172.16.1.87 # chroma convention,need http:// prefix
+          port: 8000
+      #qdrant:
+      #  host: 172.16.1.87
+      #  port: 6334 # gRPC port
+      #  collection-name: nfl
+      #  use-tls: false
+      #  initialize-schema: true
+  #datasource:
+  #  url: jdbc:postgresql://172.16.1.87:32771/mysite
+  #  username: postgres
+  #  password: postgres
+game:
+  rules:
+    file:
+      url: classpath:/2024-nfl-rulebook.pdf

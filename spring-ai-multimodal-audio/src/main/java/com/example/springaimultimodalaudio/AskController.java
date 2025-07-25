@@ -36,7 +36,7 @@ public class AskController {
     public byte[] ask(@RequestParam("audio") MultipartFile audio) {
         Media questionAudio = new Media(
                 MimeTypeUtils.parseMimeType("audio/mp3"), audio.getResource());
-
+        log.info("====== Received audio file: {}", questionAudio.getDataAsByteArray().length);
         ChatResponse chatResponse = chatClient.prompt()
                 .user(userSpec -> userSpec
                         .text("Answer the question in the given audio file.")
@@ -46,8 +46,7 @@ public class AskController {
 
         String answer = chatResponse.getResult().getOutput().getText();
         log.info("Answer: {}", answer);
-
-        return chatResponse.getResult().getOutput().getMedia().getFirst().getDataAsByteArray();
+        return chatResponse.getResult().getOutput().getMedia().get(0).getDataAsByteArray();
     }
 
 }

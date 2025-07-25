@@ -1,13 +1,15 @@
 package com.example.gamerulesassistant;
 
+import java.lang.reflect.Method;
+
 import org.slf4j.Logger;
 import org.springframework.ai.embedding.EmbeddingModel;
 import org.springframework.ai.reader.tika.TikaDocumentReader;
 import org.springframework.ai.transformer.splitter.TokenTextSplitter;
-import org.springframework.ai.chat.client.advisor.vectorstore.QuestionAnswerAdvisor;
 import org.springframework.ai.vectorstore.SimpleVectorStore;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,12 +23,8 @@ public class AiConfig {
   @Value("${game.rules.file.url}")
   private Resource rulebook;
 
-  @Bean
-  VectorStore vectorStore(EmbeddingModel embeddingModel) {
-    return SimpleVectorStore.builder(embeddingModel).build();
-  }
 
-  @Bean
+  // @Bean
   ApplicationRunner go(VectorStore vectorStore) {
     return args -> {
       var reader = new TikaDocumentReader(rulebook);

@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: demo
+  ai:
+    zhipuai:
+      base_url:
+      api_key:
+      embedding:
+        options:
+          model: embedding-2
+          dimensions: 1024
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        max-document-batch-size: 10000
+  datasource:
+    url: jdbc:postgresql://172.16.1.87:32771/mysite
+    username: postgres
+    password: postgres
+
+
+###
+### Either download the NFL Rulebook from https://operations.nfl.com/the-rules/nfl-rulebook
+### and place it under src/main/resources/2024-nfl-rulebook.pdf or choose some other
+### PDF document to use as the document to be indexed and change the value of the
+### property below to point to the location of the PDF document.
+###
+app:
+  resource:
+    classpath: /2024-nfl-rulebook.pdf

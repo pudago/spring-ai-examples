@@ -1,0 +1,14 @@
+spring:
+  ai:
+    zhipuai:
+      base_url:
+      api_key:
+  sql:
+    init:
+      mode: always
+  datasource:
+    #url: jdbc:h2:mem:testdb
+    url: jdbc:h2:file:./data/data.db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:

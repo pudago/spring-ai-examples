@@ -1,11 +1,11 @@
 spring:
-  cloud:
-    function:
-      definition: fileSupplier|documentReader|splitter|vectorStoreConsumer
   ai:
     zhipuai:
       base_url:
       api_key:
+      chat:
+        options:
+            model: glm-4v-flash
       embedding:
         options:
           model: embedding-2
@@ -19,9 +19,3 @@ spring:
     url: jdbc:postgresql://172.16.1.87:32771/mysite
     username: postgres
     password: postgres
-file:
-  supplier:
-    directory: dropoff
-    filename-regex: .*\.(pdf|docx|txt|pages)
-server:
-  port: 0

@@ -1,14 +1,13 @@
 spring:
   application:
     name: mcp-client
-
   ai:
     mcp:
       client:
         stdio:
           servers-configuration: classpath:mcp-servers.json
     openai:
-      api-key: ${OPENAI_API_KEY}
+      api_key: 
       chat:
         options:
           model: gpt-4o-mini

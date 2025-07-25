@@ -1,7 +1,4 @@
 spring:
-  cloud:
-    function:
-      definition: fileSupplier|documentReader|splitter|vectorStoreConsumer
   ai:
     zhipuai:
       base_url:
@@ -19,9 +16,6 @@ spring:
     url: jdbc:postgresql://172.16.1.87:32771/mysite
     username: postgres
     password: postgres
-file:
-  supplier:
-    directory: dropoff
-    filename-regex: .*\.(pdf|docx|txt|pages)
-server:
-  port: 0
+app:
+  promptTemplate: Tell me a joke about {subject}.
+

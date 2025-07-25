@@ -2,28 +2,36 @@
 ### e.g., app.resource=file:///Users/yourname/Downloads/yourfile.pdf
 ###    or app.resource=classpath:/data/myfile.pdf
 app:
-  resource: https://en.wikipedia.org/wiki/Chess
+  resource: file:E:/AI4Data/spring-ai-examples/spring-ai-rag-example/data/RDD_spark.pdf
 spring:
   ai:
-    openai:
-      api-key: ${OPENAI_API_KEY}
-      chat:
+    zhipuai:
+      base_url:
+      api_key:
+      embedding:
         options:
-          model: gpt-4o-mini
+          model: embedding-2
+          dimensions: 1024
     vectorstore:
-      qdrant:
-        initialize-schema: true
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        max-document-batch-size: 10000
     chat:
       observations:
         include-prompt: true
         include-completion: true
+  datasource:
+    url: jdbc:postgresql://172.16.1.87:32771/mysite
+    username: postgres
+    password: postgres
   application:
     name: spring-ai-rag-example
-  docker:
-    compose:
-      stop:
-        command: down
-        arguments: -v
+#  docker:
+#    compose:
+#      stop:
+#        command: down
+#        arguments: -v
 
 management:
   endpoints:

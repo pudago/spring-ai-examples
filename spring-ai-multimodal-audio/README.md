@@ -31,8 +31,7 @@ For example, here's how you might ask a question using the `curl`
 command line tool:
 
 ~~~
-$ curl --form file='@audiofiles/question1.mp3` \
-  http://localhost:8080/ask > answer1.mp3
+$ curl -F 'audio=@audiofiles/question1.mp3` http://localhost:8080/ask -o answer1.mp3
 ~~~
 
 Or, if using HTTPie:

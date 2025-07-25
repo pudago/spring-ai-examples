@@ -36,6 +36,10 @@ public class VectorStoreLoaderApplication {
     };
   }
 
+  //  定义 fileSupplier
+
+
+
   @Bean
   Function<Flux<Message<byte[]>>, Flux<List<Document>>> documentReader() {
     return resourceFlux -> resourceFlux

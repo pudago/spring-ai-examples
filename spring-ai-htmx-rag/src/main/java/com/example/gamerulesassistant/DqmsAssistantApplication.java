@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GameRulesAssistantApplication {
+public class DqmsAssistantApplication {
 
   public static void main(String[] args) {
-    SpringApplication.run(GameRulesAssistantApplication.class, args);
+    SpringApplication.run(DqmsAssistantApplication.class, args);
   }
 
 }

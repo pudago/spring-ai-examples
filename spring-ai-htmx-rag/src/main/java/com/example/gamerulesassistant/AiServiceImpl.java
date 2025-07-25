@@ -15,6 +15,7 @@ public class AiServiceImpl implements AiService {
   private String documentName;
 
   public AiServiceImpl(ChatClient.Builder chatClientBuilder, VectorStore vectorStore) {
+    this.documentName = "数据质量";
     this.chatClient = chatClientBuilder
         .defaultAdvisors(
           QuestionAnswerAdvisor.builder(vectorStore).build(),
