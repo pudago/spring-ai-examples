@@ -7,7 +7,10 @@ spring:
         stdio:
           servers-configuration: classpath:mcp-servers.json
     openai:
-      api_key: 
+      openai:
+      base_url: https://ark.cn-beijing.volces.com/api
+      api_key: b78293b8-eb07-4d93-a120-aab50e69122a
       chat:
+        completions-path: /v3/chat/completions
         options:
-          model: gpt-4o-mini
+          model: doubao-seed-1-6-250615
